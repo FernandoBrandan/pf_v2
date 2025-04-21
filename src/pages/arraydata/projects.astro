@@ -1,0 +1,41 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ThemeIcon from "../../components/ThemeIcon.astro";
+import Footer from "../../components/Footer.astro";
+
+import { projects, type Project } from "./dataprojects";
+
+const { project } = Astro.props as { project: Project };
+---
+
+<Layout>
+  <header class="py-4 fixed top-0 left-0 w-full bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-200 shadow-md z-50 bg-opacity-10">
+    <nav class="mx-24 flex justify-evenly items-center">
+      <h1 class="text-2xl font-semibold font-mono cursor-pointer">Fernando Brandán</h1>
+      <div class="flex items-center space-x-4">
+        <a href="/" class="hover:text-blue-600">Pagina principal</a>
+        <ThemeIcon />
+      </div>
+    </nav>
+  </header>
+
+  <main class="min-h-screen flex flex-col justify-center bg-slate-300 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+    <div class="my-24 mx-24">
+      <h2 class="text-3xl font-bold mb-12">Todos los proyectos</h2> 
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          projects.map((project) => (
+            <li value={project.slug} class="p-6 bg-white dark:bg-slate-800 shadow-md rounded-md">
+              <a href={`/projects/${project.slug}`} class="text-blue-600 dark:text-blue-400 hover:underline text-2xl font-bold">
+                {project.title}
+              </a>
+              <p class="text-sm">{project.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from "astro";
+import Layout from "../../layouts/Layout.astro";
+import ThemeIcon from "../../components/ThemeIcon.astro";
+import Footer from "../../components/Footer.astro";
+
+// Función para obtener las rutas estáticas
+export const getStaticPaths: GetStaticPaths = async () => {
+  const projects = import.meta.glob("../../content/projects/*.mdx", { eager: true });
+
+  return Object.entries(projects).map(([path, mod]: any) => {
+    const slug = path.split("/").pop().replace(".mdx", ""); // Extrae el slug del nombre del archivo
+    return {
+      params: { slug },
+      props: { project: mod }, // Pasamos el módulo importado como prop
+    };
+  });
+};
+
+// Extraemos los datos del proyecto
+const { project } = Astro.props;
+
+if (!project) {
+  throw new Error("No se encontró el proyecto.");
+}
+---
+
+<Layout>
+  <header class="py-4 fixed top-0 left-0 w-full bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-200 shadow-md z-50 bg-opacity-10">
+    <nav class="mx-24 flex justify-evenly items-center">
+      <h1 class="text-2xl font-semibold font-mono cursor-pointer">Fernando Brandán</h1>
+      <div class="flex items-center space-x-4">
+        <a href="/" class="hover:text-blue-600">Pagina principal</a>
+        <span></span>
+        <a href="/projects/md/" class="hover:text-blue-600">Proyectos</a>
+        <ThemeIcon />
+      </div>
+    </nav>
+  </header>
+  <main class="min-h-screen flex flex-col justify-center bg-slate-300 dark:bg-slate-900 text-slate-800 dark:text-slate-400">
+    <div class="my-24 flex justify-center">
+      <!-- <h2 class="text-3xl font-bold mb-4">{project.frontmatter.title}</h2>
+      <p class="text-lg">{project.frontmatter.description}</p> -->
+      <article class="prose lg:prose-lg dark:prose-invert max-w-2xl xl:max-w-7xl">
+        <project.default />
+        <!-- Renderiza el contenido del MDX -->
+      </article>
+    </div>
+  </main>
+  <Footer />
+</Layout>

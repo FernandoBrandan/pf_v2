@@ -1,0 +1,46 @@
+---
+import html from "../../assets/html.svg";
+import css from "../../assets/css.svg";
+import boostrap from "../../assets/boostrap.svg";
+import tailwind from "../../assets/tailwind.svg";
+import js2 from "../../assets/js2.svg";
+import typescript from "../../assets/typescript.svg";
+import nodejs from "../../assets/nodejs.svg";
+import oracle from "../../assets/oracle.svg";
+import php from "../../assets/php.svg";
+import laravel from "../../assets/laravel.svg";
+import cpp from "../../assets/cpp.svg";
+import bash from "../../assets/bash.svg";
+import git from "../../assets/git.svg";
+import docker from "../../assets/docker.svg";
+
+const { hideLabel } = Astro.props;
+---
+
+<section id="skills" class="py-20 bg-slate-200 dark:bg-slate-800 min-h-[50vh]">
+  <div class="container mx-auto text-center">
+    {!hideLabel && <h2 class="text-4xl font-bold mb-6 text-gray-800 dark:text-white">Habilidades</h2>}
+    <div class="flex flex-wrap justify-center gap-6">
+      <img src={html.src} width="50" height="50" alt="html" title="html" />
+      <img src={css.src} width="50" height="50" alt="css" title="Css" />
+      <img src={boostrap.src} width="50" height="50" alt="boostrap" title="Boostrap" />
+      <img src={tailwind.src} width="50" height="50" alt="tailwind" title="Tailwind" />
+      <img src={js2.src} width="50" height="50" alt="js2" title="JavaScript" />
+      <img src={typescript.src} width="50" height="50" alt="typescript" title="Typescript" />
+      <img src={nodejs.src} width="50" height="50" alt="nodejs" title="NodeJs" />
+      <img src={oracle.src} width="50" height="50" alt="oracle" title="Oracle" />
+      <img src={php.src} width="50" height="50" alt="php" title="PHP" />
+      <img src={laravel.src} width="50" height="50" alt="laravel" title="Laravel" />
+      <img src={cpp.src} width="50" height="50" alt="cpp" title="Cpp" />
+      <img src={bash.src} width="50" height="50" alt="bash" title="Bash" />
+      <img src={git.src} width="50" height="50" alt="git" title="Git" />
+      <img src={docker.src} width="50" height="50" alt="git" title="Docker" />
+    </div>
+  </div>
+</section>
+
+<style>
+  img:hover {
+    transform: scale(1.5);
+  }
+</style>

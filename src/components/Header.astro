@@ -1,0 +1,14 @@
+---
+import Navigation from "./Navigation.astro";
+import ThemeIcon from "./ThemeIcon.astro";
+---
+
+<header class="py-4 fixed top-0 left-0 w-full bg-tr shadow-md z-50 bg-opacity-10 bg-slate-300 dark:bg-slate-700">
+  <nav class="mx-24 flex justify-between items-center">
+    <h1 class="text-2xl font-semibold font-mono dark:text-white cursor-pointer" onclick="scrollToTop()">Fernando Brandán</h1>
+    <div class="flex items-center space-x-4">
+      <Navigation />
+      <ThemeIcon />
+    </div>
+  </nav>
+</header>

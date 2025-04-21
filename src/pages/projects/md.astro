@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ThemeIcon from "../../components/ThemeIcon.astro";
+import Footer from "../../components/Footer.astro";
+
+import * as greatPost from "../../content/projects/apigateway.mdx"; // Import the Markdown file individually
+const posts = Object.values(import.meta.glob("../../content/**/*.mdx", { eager: true })); // Import all Markdown files
+---
+
+<Layout>
+  <header class="py-4 fixed top-0 left-0 w-full bg-slate-300 dark:bg-slate-700 text-slate-800 dark:text-slate-200 shadow-md z-50 bg-opacity-10">
+    <nav class="mx-24 flex justify-evenly items-center">
+      <h1 class="text-2xl font-semibold font-mono cursor-pointer">Fernando Brandán</h1>
+      <div class="flex items-center space-x-4">
+        <a href="/" class="hover:text-blue-600">Pagina principal</a>
+        <ThemeIcon />
+      </div>
+    </nav>
+  </header>
+
+  <main class="min-h-screen flex flex-row bg-slate-300 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
+    <section class="flex flex-col justify-start my-24 px-12">
+      <h2 class="text-3xl font-bold mb-12">Todos los proyectos</h2>
+      <ul class="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {
+          posts.map(
+            (post) =>
+              post.frontmatter.notas !== true && (
+                <li class="p-6 bg-white dark:bg-slate-800 shadow-md rounded-md">
+                  <a href={`/projects/${post.frontmatter.slug}`} class="text-blue-600 dark:text-blue-400 hover:underline text-xl font-bold">
+                    {post.frontmatter.title}
+                  </a>
+                  <p class="mt-6 text-lg">{post.frontmatter.description}</p>
+                </li>
+              )
+          )
+        }
+      </ul>
+    </section>
+
+    <span class="w-0.5 h-auto mt-34 m-6 bg-gray-500"></span>
+    <article class="my-34 mr-10 w-1/3 text-sm flex flex-col justify-start bg-slate-300 dark:bg-slate-900 text-black dark:text-teal-300">
+      <p class="mb-5" title="un poco de todo...">También puedes ver mis apuntes de mis lecturas, estudios y prácticas en programación, tecnologías, diseño de sistemas, etc.</p>
+      <ul class="">
+        {
+          posts.map(
+            (post) =>
+              post.frontmatter.notas === true && (
+                <li class="py-2" key={post.frontmatter.slug}>
+                  <a href={`/projects/${post.frontmatter.slug}`} class="transition decoration-2 hover:decoration-blue-600 hover:text-blue-600">
+                    {post.frontmatter.title}
+                  </a>
+                </li>
+              )
+          )
+        }
+      </ul>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

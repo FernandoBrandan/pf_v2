@@ -1,0 +1,74 @@
+<section id="projects" class="py-20 bg-slate-500 dark:bg-slate-700">
+  <div class="container mx-auto text-center text-white dark:text-slate-200">
+    <h2 class="text-4xl font-bold mb-6 text-center">Proyectos</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- ________________________  -->
+      <!-- Separacion  -->
+      <!-- ________________________  -->
+      <div class="projects bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow-md transition">
+        <h3 class="text-4xl font-bold text-blue-600 dark:text-blue-400">API Gateway</h3>
+        <div class="my-3">
+          <span class="bg-green-300 text-green-800 text-xs font-medium me-2 px-2.5 py-1 rounded-full dark:bg-green-900 dark:text-green-100">NodeJs</span>
+          <span class="bg-blue-300 text-blue-800 text-xs font-medium me-2 px-2.5 py-1 rounded-full dark:bg-blue-900 dark:text-blue-100">TypeScript</span>
+        </div>
+        <p class="my-8 text-sm text-gray-700 dark:text-gray-50 text-left">
+          Desarrollada dentro de una arquitectura de microservicios para un enfoque escalable. Proporciona registro, inicio de sesión y validación de usuarios con tokens JWT, garantizando autenticación, autorización y enrutamiento seguro entre servicios.
+        </p>
+        <a href="https://github.com/FernandoBrandan/api-gateway-proxy-token" class="text-lg font-bold text-blue-600 dark:text-blue-400 hover:underline">GitHub</a>
+        <span class="text-lg font-bold text-blue-600 dark:text-blue-400">-</span>
+        <a href="/projects/Apigateway" class="text-lg font-bold text-blue-600 dark:text-blue-400 hover:underline transition">Page</a>
+      </div>
+      <!-- ________________________  -->
+      <!-- Separacion  -->
+      <!-- ________________________  -->
+      <div class="projects bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow-md transition">
+        <h3 class="text-4xl font-bold text-blue-600 dark:text-blue-400">Microservicios</h3>
+        <div class="my-3">
+          <span class="bg-green-300 text-green-800 text-xs font-medium me-2 px-2.5 py-1 rounded-full dark:bg-green-900 dark:text-green-100">NodeJs</span>
+          <span class="bg-blue-300 text-blue-800 text-xs font-medium me-2 px-2.5 py-1 rounded-full dark:bg-blue-900 dark:text-blue-100">TypeScript</span>
+        </div>
+
+        <p class="my-8 text-sm text-gray-700 dark:text-gray-50 text-left">
+          Contiene una colección de microservicios desarrollados en diferentes tecnologías y lenguajes de programación, organizados dentro de una arquitectura de microservicios para proporcionar una solución escalable, flexible y modular.
+          <!-- Cada microservicio está diseñado para gestionar un dominio específico de la aplicación y se implementa utilizando distintas tecnologías, lo que favorece la interoperabilidad y la especialización. -->
+        </p>
+        <a href="/projects/Microservicios" class="text-lg font-bold text-blue-600 dark:text-blue-400 hover:underline">Page</a>
+      </div>
+      <!-- ________________________  -->
+      <!-- Separacion  -->
+      <!-- ________________________  -->
+      <div class="projects bg-gray-100 dark:bg-gray-700 p-6 rounded-xl shadow-md transition">
+        <h3 class="text-4xl font-bold text-blue-600 dark:text-blue-400">Message Queue</h3>
+        <div class="my-3">
+          <span class="bg-gray-300 text-gray-500 text-xs font-medium me-2 px-2.5 py-1 rounded-full dark:bg-gray-500 dark:text-gray-100">Deno</span>
+          <span class="bg-blue-300 text-blue-800 text-xs font-medium me-2 px-2.5 py-1 rounded-full dark:bg-blue-900 dark:text-blue-100">TypeScript</span>
+        </div>
+
+        <p class="my-8 text-sm text-gray-700 dark:text-gray-50 text-left">
+          Implementa un sistema de mensajería asíncrona para la comunicación entre microservicios, garantizando la entrega de mensajes y la escalabilidad de la aplicación. Utiliza RabbitMQ como broker de mensajes y se integra con los microservicios mediante colas de mensajes.
+        </p>
+        <a href="/projects/MessageQueue" class="text-lg font-bold text-blue-600 dark:text-blue-400 hover:underline">Page</a>
+      </div>
+      <!-- ________________________  -->
+      <!-- Separacion  -->
+      <!-- ________________________  -->
+    </div>
+    <div class="flex flex-row justify-end mt-8 animate-bounce">
+      <a href="projects/md/" class="arrow flex items-center w-fit cursor-pointer text-3xl font-semibold text-slate-200 dark:text-blue-400">
+        Ver todos
+        <img width="40" height="40" src="https://img.icons8.com/ios-filled/50/FAB005/arrow.png" alt="arrow" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- card -> E-commerce - Scripts -->
+
+<style is:inline>
+  .projects:hover {
+    transform: scale(1.2);
+  }
+  .arrow:hover {
+    transform: scale(1.3);
+  }
+</style>
